@@ -7,7 +7,7 @@
     "test": "",
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
-    "fix": "prettier --write src/**/*.js  src/**/*.scss"
+    "fix": "prettier --write ./*.js src/**/*.js  src/**/*.scss"
   },
   "author": "booleanrecep",
   "license": "ISC",
