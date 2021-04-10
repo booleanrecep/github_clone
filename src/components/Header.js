@@ -10,7 +10,7 @@ import {
   repositoriesSvg,
   signoutSvg,
 } from "../assets/data";
-import status from "../assets/status.png";
+import me from "../assets/me.png";
 export const Header = () => {
   const {
     topBar: { inputDropdownList, addDropdownList, accountDropdownList },
@@ -67,6 +67,24 @@ export const Header = () => {
           break;
       }
     };
+    const handleClose = (e) => {
+      // e.stopPropagation()
+      !["search", "add", "avatar"].includes(e.target.parentNode.id)
+        ? setStyles({
+            displaySearch: "none",
+            widthSearch: "264px",
+            detailsOpen: false,
+            ddList: [],
+            displayDetails: "none",
+          })
+        : null;
+    };
+    React.useEffect(() => {
+      window.addEventListener("click", handleClose);
+      return () => {
+        window.removeEventListener("click", handleClose);
+      };
+    }, []);
     return (
       <header onClick={handleStyle}>
         <div className="github-icon">
@@ -116,7 +134,7 @@ export const Header = () => {
             ></i>
           </span>
           <span id="avatar">
-            <img src={status} />
+            <img alt="me" src={me} />
             <i
               className="fa fa-caret-down"
               style={{ fontSize: "12px", color: "#cdd9e5" }}

@@ -1,63 +1,27 @@
 import React from "react";
-
+import { Tabs } from "./Tabs";
+import { UserContent } from "./UserContent";
+import { TabsContent } from "./TabsContent";
+import "../assets/styles/main.scss";
 export const Main = () => {
+  const ref = React.useRef();
+  const handlePosition = () => {
+    return window.pageYOffset > ref.current.offsetTop
+      ? (ref.current.style.position = "fixed")
+      : (ref.current.style.position = "inherit");
+  };
+  React.useEffect(() => {
+    console.log(ref.current);
+    window.addEventListener("scroll", handlePosition);
+    return () => {
+      window.removeEventListener("scroll", handlePosition);
+    };
+  }, []);
   return (
-    <div>
-      <main>
-        <div className="tabs">
-          <nav>
-            <a>
-              <svg></svg>Overview
-            </a>
-            <a>
-              <svg></svg>Repository<span>148</span>
-            </a>
-            <a>
-              <svg></svg>Projects
-            </a>
-            <a>
-              <svg></svg>Packages
-            </a>
-          </nav>
-        </div>
-        <div className="main-content">
-          <div className="user-content">
-            <div>
-              <img />
-              <span></span>
-            </div>
-            <div>
-              <p>Recep Öztürk</p>
-              <p>booleanrecep</p>
-            </div>
-            <div>
-              <p>Steadily improving...</p>
-            </div>
-          </div>
-          <div className="tabs-content">
-            <h2>Pinned || Customize your pins</h2>
-            <form>
-              <ol>
-                <li>
-                  <div>
-                    <svg></svg>
-                    <a>fake_keep</a>
-                    <span></span>
-                  </div>
-                  <p>Google Keep-like Fake</p>
-                  <p>
-                    <span>0 Javascript</span>
-                    <span>
-                      {" "}
-                      <svg>*</svg>2
-                    </span>
-                  </p>
-                </li>
-              </ol>
-            </form>
-          </div>
-        </div>
-      </main>
-    </div>
+    <main>
+      <Tabs ref={ref} />
+      <UserContent />
+      <TabsContent />
+    </main>
   );
 };

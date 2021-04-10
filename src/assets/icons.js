@@ -52,6 +52,7 @@ export const overviewSvg = (
     version="1.1"
     width="16"
     aria-hidden="true"
+    fill="#636e7b"
   >
     <path
       fillRule="evenodd"
@@ -81,6 +82,7 @@ export const projectsSvg = (
     version="1.1"
     width="16"
     aria-hidden="true"
+    fill="#636e7b"
   >
     <path
       fillRule="evenodd"
@@ -95,6 +97,7 @@ export const packagesSvg = (
     version="1.1"
     width="16"
     aria-hidden="true"
+    fill="#636e7b"
   >
     <path
       fillRule="evenodd"
@@ -108,7 +111,7 @@ export const followersSvg = (
     viewBox="0 0 16 16"
     version="1.1"
     width="16"
-    ariHidden="true"
+    aria-hidden="true"
   >
     <path
       fillRule="evenodd"
@@ -123,6 +126,7 @@ export const starSvg = (
     version="1.1"
     width="16"
     aria-hidden="true"
+    fill="#636e7b"
   >
     <path
       fillRule="evenodd"
@@ -187,9 +191,10 @@ export const grabSvg = (
   <svg
     viewBox="0 0 16 16"
     version="1.1"
-    width="16"
-    height="16"
+    width="20"
+    height="20"
     aria-hidden="true"
+    fill="#636e7b"
   >
     <path
       fillRule="evenodd"

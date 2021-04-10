@@ -7,12 +7,13 @@ body {
 }
 header {
   height: 63px;
+  width: 100%;
   background-color: #2d333b;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+  // position: relative;
   .github-icon {
     margin: 10px 0 10px 30px;
     width: 50px;
@@ -31,6 +32,9 @@ header {
 
     div {
       margin: 10px;
+      &:hover {
+        color: #adbac7;
+      }
     }
   }
   .right-tools {
@@ -44,6 +48,8 @@ header {
       img {
         width: 14px;
         height: 14px;
+        border-radius: 7px;
+        margin-right: 5px;
       }
     }
     details {
@@ -60,18 +66,12 @@ header {
       margin-right: 50px;
       font-size: 14px;
       display: none;
-
       line-height: 1.8;
-      // padding:0 10px;
       padding-top: 10px;
-
       summary {
         list-style: none;
         display: none;
         border: none;
-        // &par{
-        //   border:none;
-        // }
         &::-webkit-details-marker {
           display: none;
         }
@@ -79,8 +79,6 @@ header {
       p {
         margin: 0;
         padding-left: 10px;
-        // padding-top: 5px;
-        // width:100%;
         height: 30px;
         vertical-align: bottom;
       }
@@ -112,7 +110,6 @@ header {
       &:focus {
         border: 1px solid #4184e4;
         width: 540px;
-        // transition: width 0.3s;
         outline-offset: 0px;
         color: $menuFontColor;
         border-bottom-left-radius: 0;
@@ -129,17 +126,13 @@ header {
   }
   ul {
     list-style: none;
-    // display: none;
     position: absolute;
     color: $menuFontColor;
     margin-top: -2px;
     margin-left: -39px;
-    // display: none;
-    // opacity: 0;
-    // opacity: 0;
-    width: 545px;
+    width: fit-content;
     transition: width 0.2s;
-    // transition: display 0.2s,width 0.2s;
+    z-index: 1;
 
     li {
       display: flex;
@@ -150,7 +143,6 @@ header {
       outline: 0.3px solid #373e47;
       padding: 10px;
       cursor: pointer;
-      // transition: width 0.1s;
 
       &:hover {
         background-color: #4184e4;

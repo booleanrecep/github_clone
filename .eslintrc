@@ -4,7 +4,7 @@
         "es2021": true
     },
     "extends": [
-        // "eslint:recommended",
+        "eslint:recommended",
         "plugin:react/recommended"
     ],
     "parserOptions": {
@@ -18,5 +18,8 @@
         "react"
     ],
     "rules": {
+        // "no-multiple-empty-lines": [2, {"max": 2}],
+        // "no-warning-comments": ["error", { "beforeBlockComment": true }]
+        
     }
 }
