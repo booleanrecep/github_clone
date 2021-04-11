@@ -4,14 +4,17 @@ html {
   padding: 0;
   width: 100%;
 }
+i,
+a,
+svg,
+img,
+button:hover {
+  cursor: pointer;
+}
 main {
-  // display: flex;
-  // flex-direction: row;
-  // justify-content:space-around;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   background-color: #22272e;
-
   @import "tabs";
   @import "tabs_content";
   @import "user_content";

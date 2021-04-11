@@ -115,4 +115,5 @@ export {
   highlightSvg,
   grabSvg,
   inputSvg,
+  hamburgerSvg
 } from "../assets/icons";

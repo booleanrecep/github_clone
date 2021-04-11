@@ -10,8 +10,15 @@ import me from "../assets/me.png";
 export const Tabs = React.forwardRef((props, ref) => {
   return (
     <div className="tabs" ref={ref}>
-      <div>
-        <img alt="me" src={me} />
+      <div
+        // eslint-disable-next-line react/prop-types
+        style={{ visibility: props.showUser > -240 ? "hidden" : "visible" }}
+      >
+        <img
+          alt="me"
+          src={me}
+          //
+        />
         <span>booleanrecep</span>
       </div>
       <nav>

@@ -9,6 +9,7 @@ import {
   inputSvg,
   repositoriesSvg,
   signoutSvg,
+  hamburgerSvg
 } from "../assets/data";
 import me from "../assets/me.png";
 export const Header = () => {
@@ -17,27 +18,27 @@ export const Header = () => {
   } = data;
   {
     const [styles, setStyles] = React.useState({
-      displaySearch: "none",
-      widthSearch: "545px",
+      displaySearch: "hidden",
+      widthSearch: "264px",
       detailsOpen: false,
       ddList: [],
       displayDetails: "none",
     });
     const handleStyle = (e) => {
       // e.bubbles=false
-      console.log(e.target.parentNode);
+      // console.log(e.target.parentNode);
       switch (e.target.parentNode.id) {
         case "search":
           setStyles((prevState) => ({
             ...prevState,
-            displaySearch: "block",
+            displaySearch: "visible",
             widthSearch: "545px",
           }));
           break;
         case "add":
           setStyles((prevState) => ({
             ...prevState,
-            displaySearch: "none",
+            displaySearch: "hidden",
             detailsOpen: !prevState.open,
             displayDetails:
               prevState.displayDetails === "block" ? "none" : "block",
@@ -48,7 +49,7 @@ export const Header = () => {
         case "avatar":
           setStyles((prevState) => ({
             ...prevState,
-            displaySearch: "none",
+            displaySearch: "hidden",
             detailsOpen: !prevState.open,
             displayDetails:
               prevState.displayDetails === "block" ? "none" : "block",
@@ -62,7 +63,7 @@ export const Header = () => {
             detailsOpen: false,
             displayDetails: "none",
             widthSearch: "264px",
-            displaySearch: "none",
+            displaySearch: "hidden",
           }));
           break;
       }
@@ -71,10 +72,10 @@ export const Header = () => {
       // e.stopPropagation()
       !["search", "add", "avatar"].includes(e.target.parentNode.id)
         ? setStyles({
-            displaySearch: "none",
-            widthSearch: "264px",
+            displaySearch: "hidden",
             detailsOpen: false,
             ddList: [],
+            widthSearch: "264px",
             displayDetails: "none",
           })
         : null;
@@ -85,18 +86,25 @@ export const Header = () => {
         window.removeEventListener("click", handleClose);
       };
     }, []);
+    console.log(hamburgerSvg)
     return (
       <header onClick={handleStyle}>
         <div className="github-icon">
-          <a>{githubCatSvg}</a>
+          <a>{window.innerWidth > 879 ? githubCatSvg : hamburgerSvg}</a>
         </div>
         <div className="searchbar">
           <label id="search">
-            <input placeholder="Search or jump to..." />
+            <input
+              placeholder="Search or jump to..."
+              style={{ width: styles.widthSearch }}
+            />
             <span>{inputSvg}</span>
           </label>
           <ul
-            style={{ display: styles.displaySearch, width: styles.widthSearch }}
+            style={{
+              width: styles.widthSearch,
+              visibility: styles.displaySearch,
+            }}
           >
             {inputDropdownList.map((el) => {
               return (
@@ -109,8 +117,11 @@ export const Header = () => {
             })}
           </ul>
         </div>
-
+            
         <div className="menus">
+        {
+              window.innerWidth  <879?<>{githubCatSvg}</>:null
+            }
           <div>
             <a>Pull requests</a>
           </div>

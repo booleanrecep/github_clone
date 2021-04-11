@@ -1,10 +1,7 @@
 $menuFontColor: #cdd9e5;
 $menuFontFamily: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji;
-body {
-  margin: 0;
-  padding: 0;
-}
+
 header {
   height: 63px;
   width: 100%;
@@ -13,7 +10,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // position: relative;
   .github-icon {
     margin: 10px 0 10px 30px;
     width: 50px;
@@ -29,6 +25,9 @@ header {
     line-height: 1.5;
     font-family: $menuFontFamily;
     padding: 10px;
+    svg{
+      display: none;
+    }
 
     div {
       margin: 10px;
@@ -59,6 +58,7 @@ header {
       width: 140px;
       height: fit-content;
       border-radius: 6px;
+      border-top-right-radius: -20px;
       background-color: #2d333b;
       color: #cdd9e5b3;
       font-weight: 600;
@@ -89,7 +89,6 @@ header {
     }
   }
 }
-
 .searchbar {
   label {
     input {
@@ -102,7 +101,7 @@ header {
       width: 264px;
       margin-left: 0;
       font-weight: 600;
-      transition: width 0.2s;
+      transition: width 0.25s;
       &::placeholder {
         color: #adbac7;
       }
@@ -114,6 +113,7 @@ header {
         color: $menuFontColor;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+
         & + span {
           display: none;
         }
@@ -133,6 +133,8 @@ header {
     width: fit-content;
     transition: width 0.2s;
     z-index: 1;
+    transition: width 0.25s, visibility 0.25s;
+    visibility: "hidden";
 
     li {
       display: flex;
@@ -161,8 +163,8 @@ header {
         width: 400px;
       }
       button {
-        width: 60px;
-        margin-right: -50px;
+        width: fit-content;
+        margin-right: 0px;
         border: none;
         height: 25px;
         outline: 0.3 solid #373e47;
@@ -170,14 +172,39 @@ header {
         display: none;
         color: #4c535e;
         cursor: pointer;
+        font-size: 12px;
       }
     }
   }
 }
 
-i,
-a,
-svg,
-img:hover {
-  cursor: pointer;
+@media screen and (min-width: 880px) and (max-width: 960px) {
+  .searchbar > label > input {
+    width: 264px !important;
+    margin-left: 10px !important;
+  }
+  .searchbar > ul {
+    margin-left: -28px !important;
+    width: 264px !important;
+  }
+}
+@media screen and (max-width: 879px) {
+  header {
+    div {
+      display: none;
+      visibility: hidden;
+    }
+    .github-icon {
+      visibility: visible;
+      // background: ;
+    }
+    .menus{
+     
+      svg{
+        // visibility: visible;
+        display: block;
+
+      }
+    }
+  }
 }

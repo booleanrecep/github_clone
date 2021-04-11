@@ -1,13 +1,9 @@
 .tabs-content {
   width: fit-content;
   height: fit-content;
-  // border: 2px solid red;
-  // margin-top: -500px;
-  // margin-right: 0;
   margin-top: -600px;
   margin-left: 350px;
   padding-right: 50px;
-  //    background-color:peru;
   background-position: center;
   h2 {
     display: flex;
@@ -39,8 +35,6 @@
     height: fit-content;
     width: 100%;
     list-style: none;
-    // flex-basis: 100%;
-    // border: 2px solid rgb(189, 131, 131);
 
     li {
       display: flex;
@@ -58,14 +52,10 @@
           flex-grow: 1;
           margin-left: 10px;
           color: #539bf5;
-          // width:100px;
           &:hover {
             text-decoration: underline;
           }
         }
-        // svg:last-of-type{
-        //   flex-grow: 3;
-        // }
         svg:last-of-type:hover {
           cursor: grab;
         }
