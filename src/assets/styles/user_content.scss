@@ -146,6 +146,7 @@
   }
   .middle {
     display: flex;
+    width: fit-content;
     flex-direction: column;
     justify-content: flex-start;
     p {
