@@ -3,16 +3,18 @@
   height: fit-content;
   margin-left: 50px;
   margin-top: -50px;
+  // width:35%;
+
   .image {
     width: fit-content;
-    // height: 50%;
-    // height: fit-content;
+    margin: 0;
+    padding: 0;
+    // width: 50%;
+
     img {
       position: relative;
       width: 70%;
       height: 70%;
-      // width: 240px;
-      // height: 240px;
       border-radius: 50%;
     }
     div {
@@ -35,7 +37,7 @@
           list-style: none;
           display: none;
           border: none;
-          &::-webkit-details-marker {
+          &::marker {
             display: none;
           }
         }
@@ -127,6 +129,7 @@
     }
   }
   .top {
+    width: fit-content;
     h1 {
       span {
         display: block;

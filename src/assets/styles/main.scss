@@ -15,7 +15,11 @@ main {
   width: fit-content;
   height: fit-content;
   background-color: #22272e;
+  display: flex;
+  flex-direction: column;
   @import "tabs";
   @import "tabs_content";
   @import "user_content";
 }
+
+@import "media_queries";

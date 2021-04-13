@@ -8,12 +8,11 @@ import {
   portfolioLinkSvg,
   highlightSvg,
 } from "../assets/data";
-// eslint-disable-next-line react/display-name
 export const UserContent = React.forwardRef((props, ref) => {
   return (
-    <div className="user-content">
+    <div className="user-content" ref={ref}>
       <div className="image">
-        <img title="me" src={me} ref={ref} />
+        <img title="me" src={me} />
         <div>
           <details open>
             <summary></summary>
@@ -78,3 +77,4 @@ export const UserContent = React.forwardRef((props, ref) => {
     </div>
   );
 });
+UserContent.displayName = "UserContent";

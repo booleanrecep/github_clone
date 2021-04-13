@@ -11,8 +11,11 @@ header {
   justify-content: space-between;
   align-items: center;
   .github-icon {
-    margin: 10px 0 10px 30px;
     width: 50px;
+    margin: 10px 0 10px 30px;
+    span {
+      display: none;
+    }
   }
 
   .menus {
@@ -25,7 +28,7 @@ header {
     line-height: 1.5;
     font-family: $menuFontFamily;
     padding: 10px;
-    svg{
+    svg {
       display: none;
     }
 
@@ -173,37 +176,6 @@ header {
         color: #4c535e;
         cursor: pointer;
         font-size: 12px;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 880px) and (max-width: 960px) {
-  .searchbar > label > input {
-    width: 264px !important;
-    margin-left: 10px !important;
-  }
-  .searchbar > ul {
-    margin-left: -28px !important;
-    width: 264px !important;
-  }
-}
-@media screen and (max-width: 879px) {
-  header {
-    div {
-      display: none;
-      visibility: hidden;
-    }
-    .github-icon {
-      visibility: visible;
-      // background: ;
-    }
-    .menus{
-     
-      svg{
-        // visibility: visible;
-        display: block;
-
       }
     }
   }

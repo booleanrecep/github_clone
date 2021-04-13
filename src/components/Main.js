@@ -4,28 +4,35 @@ import { UserContent } from "./UserContent";
 import { TabsContent } from "./TabsContent";
 import "../assets/styles/main.scss";
 export const Main = () => {
-  const ref = React.useRef();
-  const ref_user_img = React.useRef();
-  const [imgoffset, setImgoffset] = React.useState(0);
+  const ref_tabs = React.useRef();
+  const ref_user = React.useRef();
+  const [offsets, setOffsets] = React.useState({
+    useroffset: 0,
+    tabsoffset: 0,
+  });
   const handlePosition = () => {
-    setImgoffset(ref_user_img.current.getBoundingClientRect().y);
-    return window.pageYOffset > ref.current.offsetTop
-      ? (ref.current.style.position = "fixed")
-      : (ref.current.style.position = "inherit");
+    setOffsets({
+      useroffset: ref_user.current.getBoundingClientRect().y,
+      tabsoffset: ref_tabs.current.getBoundingClientRect().y,
+    });
+    window.pageYOffset > 80 && window.innerWidth > 879
+      ? (ref_tabs.current.style.position = "fixed")
+      : (ref_tabs.current.style.position = "inherit");
   };
   React.useEffect(() => {
-    console.log("off", ref_user_img.current.offsetTop);
-
     window.addEventListener("scroll", handlePosition);
     return () => {
       window.removeEventListener("scroll", handlePosition);
     };
   }, []);
+  console.log(offsets);
   return (
     <main>
-      <Tabs showUser={imgoffset} ref={ref} />
-      <UserContent ref={ref_user_img} />
+      <Tabs showUser={offsets.useroffset} ref={ref_tabs} />
+      <UserContent ref={ref_user} />
+
       <TabsContent />
+      {/* <Tabs showUser={offsets.useroffset} ref={ref_tabs} /> */}
     </main>
   );
 };

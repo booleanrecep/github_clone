@@ -9,7 +9,7 @@ import {
   inputSvg,
   repositoriesSvg,
   signoutSvg,
-  hamburgerSvg
+  hamburgerSvg,
 } from "../assets/data";
 import me from "../assets/me.png";
 export const Header = () => {
@@ -86,11 +86,11 @@ export const Header = () => {
         window.removeEventListener("click", handleClose);
       };
     }, []);
-    console.log(hamburgerSvg)
     return (
       <header onClick={handleStyle}>
         <div className="github-icon">
-          <a>{window.innerWidth > 879 ? githubCatSvg : hamburgerSvg}</a>
+          <span>{hamburgerSvg}</span>
+          <a>{githubCatSvg}</a>
         </div>
         <div className="searchbar">
           <label id="search">
@@ -117,11 +117,9 @@ export const Header = () => {
             })}
           </ul>
         </div>
-            
+
         <div className="menus">
-        {
-              window.innerWidth  <879?<>{githubCatSvg}</>:null
-            }
+          {githubCatSvg}
           <div>
             <a>Pull requests</a>
           </div>
