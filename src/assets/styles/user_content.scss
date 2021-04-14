@@ -2,7 +2,9 @@
   width: fit-content;
   height: fit-content;
   margin-left: 50px;
-  margin-top: -50px;
+  // margin-top: -50px;
+  margin-top: 50px;
+
   // width:35%;
 
   .image {
@@ -16,8 +18,11 @@
       width: 70%;
       height: 70%;
       border-radius: 50%;
+      z-index: 1;
     }
     div {
+      z-index: 2;
+
       position: absolute;
       width: fit-content;
       margin-top: -100px;

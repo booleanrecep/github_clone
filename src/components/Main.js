@@ -15,9 +15,16 @@ export const Main = () => {
       useroffset: ref_user.current.getBoundingClientRect().y,
       tabsoffset: ref_tabs.current.getBoundingClientRect().y,
     });
-    window.pageYOffset > 80 && window.innerWidth > 879
-      ? (ref_tabs.current.style.position = "fixed")
-      : (ref_tabs.current.style.position = "inherit");
+    if (window.innerWidth > 879) {
+      window.pageYOffset > 80
+        ? (ref_tabs.current.style.position = "fixed")
+        : (ref_tabs.current.style.position = "inherit");
+    } else {
+      window.pageYOffset > 550
+        ? (ref_tabs.current.style.position = "fixed")
+        : (ref_tabs.current.style.position = "relative");
+    }
+    console.log(offsets.useroffset);
   };
   React.useEffect(() => {
     window.addEventListener("scroll", handlePosition);
@@ -25,14 +32,17 @@ export const Main = () => {
       window.removeEventListener("scroll", handlePosition);
     };
   }, []);
-  console.log(offsets);
+  // console.log(offsets);
   return (
-    <main>
-      <Tabs showUser={offsets.useroffset} ref={ref_tabs} />
-      <UserContent ref={ref_user} />
+    <div className="container">
+      <main>
+        <UserContent ref={ref_user} />
+        <div className="tc">
+          <Tabs showUser={offsets.useroffset} ref={ref_tabs} />
 
-      <TabsContent />
-      {/* <Tabs showUser={offsets.useroffset} ref={ref_tabs} /> */}
-    </main>
+          <TabsContent />
+        </div>
+      </main>
+    </div>
   );
 };

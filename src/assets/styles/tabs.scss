@@ -5,7 +5,7 @@
   border-left: none;
   border-right: none;
   border-top: none;
-  width: 100%;
+
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -14,7 +14,10 @@
   padding-top: 20px;
   margin: 0;
   background-color: #22272e;
+  // border:2px solid red;
   transition: top 1s, display 1s;
+  width: 100vw;
+  margin-left: -365px;
 
   div {
     width: 150px;

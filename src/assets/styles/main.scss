@@ -4,20 +4,37 @@ html {
   padding: 0;
   width: 100%;
 }
+body {
+  &::-webkit-scrollbar {
+    width: 14px;
+    background-color: #424242;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #686868;
+    border-radius: 3px;
+  }
+}
 i,
+span,
 a,
 svg,
 img,
 button:hover {
   cursor: pointer;
 }
+@import "tabs";
+
 main {
   width: fit-content;
   height: fit-content;
   background-color: #22272e;
   display: flex;
   flex-direction: column;
-  @import "tabs";
+  .tc {
+    margin-top: -700px;
+    margin-left: 350px;
+  }
   @import "tabs_content";
   @import "user_content";
 }
