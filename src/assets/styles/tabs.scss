@@ -1,6 +1,6 @@
 .tabs {
   top: 0;
-  height: 50px;
+  height: 45px;
   border: 0.3px solid #768390;
   border-left: none;
   border-right: none;
@@ -51,8 +51,12 @@
       line-height: 30px;
       color: #768390;
       width: fit-content;
+      &:first-of-type {
+        border-bottom: 2px solid #f9826c;
+      }
       &:active {
         color: #adbac7;
+        border-bottom: 2px solid #f9826c;
         svg {
           fill: #adbac7;
         }

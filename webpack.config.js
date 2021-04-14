@@ -34,9 +34,9 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sassOptions: {
-                indentWidth: 4,
-                includePaths: ["absolute/path/a", "absolute/path/b"],
-                outputStyle: "compressed",
+                // indentWidth: 4,
+                // outputStyle: "compressed",
+                // name: "[path][name][hash].[ext]",
               },
             },
           },

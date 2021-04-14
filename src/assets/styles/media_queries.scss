@@ -18,15 +18,10 @@
       .tc {
         .tabs {
           width: 100%;
-          // overflow-x: scroll;
           background-color: #2d333b;
           height: fit-content;
           line-height: 20px;
           white-space: nowrap;
-
-          // &::-webkit-scrollbar {
-          //   background-color: #686868;
-          // }
         }
       }
 
@@ -42,6 +37,7 @@
       flex-grow: 1;
       span {
         display: block;
+        width: fit-content;
       }
       a {
         display: none;
@@ -87,15 +83,11 @@
     nav {
       margin: 0;
       margin-left: 0;
-      //   position: relative;
     }
   }
   main {
     margin: 0;
     width: 100%;
-    // height: 100vh;
-    // flex-direction: column-reverse;
-    // flex-direction: column;
 
     .user-content {
       width: unset;
@@ -189,10 +181,8 @@
     }
 
     .tabs-content {
-      // margin-top: -300px;
       margin-top: 0;
       margin-left: 0;
-      // display: none;
       ol {
         li {
           flex-basis: 50%;
@@ -224,7 +214,7 @@
         }
       }
       .middle {
-        margin-top: 210px;
+        margin-top: 130px;
         ul {
           li:first-of-type {
             display: none;
@@ -238,6 +228,15 @@
     .tc {
       .tabs {
         overflow-x: scroll;
+      }
+    }
+    .tabs-content {
+      margin-top: 0;
+      margin-left: 0;
+      ol {
+        li {
+          background-color: #2d333b;
+        }
       }
     }
   }
